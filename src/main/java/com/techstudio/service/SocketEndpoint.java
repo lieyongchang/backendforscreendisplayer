@@ -33,15 +33,15 @@ public class SocketEndpoint {
 		
 		System.out.println("onOpen is called");
         // Get session and WebSocket connection
-		this.session = session;
-		setOfEndpoints.add(this);
+		// this.session = session;
+		// setOfEndpoints.add(this);
 		
 		Message message = new Message();
 //        message.setFrom(username);
         message.setContent("Connected!");
         
         try {
-            this.session.getBasicRemote().sendObject(message);
+            session.getBasicRemote().sendObject(message);
         } catch (IOException | EncodeException e) {
             e.printStackTrace();
         }
